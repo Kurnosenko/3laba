@@ -1,0 +1,45 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int Input;
+    cout << "Number of elements: \n";
+    cin >> Input;
+
+    int* arr = (int*)malloc(sizeof(int) * Input);
+
+    cout << "Elements in Massiv: \n";
+    for (int i = 0; i < Input; i++) {
+        cin >> arr[i];
+    }
+    
+    int buff;
+
+    for (int i = 0; i < Input - i; i++) {
+
+        for (int a = 0; a < Input - i - 1; a++) {
+
+            if (arr[a] > arr[a + 1]) {
+
+                buff = arr[a];
+                arr[a] = arr[a + 1];
+                arr[a + 1] = buff;
+            }
+
+        }
+    }
+
+    cout << "Array after sort: \n";
+
+    for (int i = 0; i < Input; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << "\ndone";
+
+    free(arr);
+
+    return 0;
+}
